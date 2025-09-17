@@ -43,6 +43,7 @@ fun FormularioScreen(
     var valorTexto by remember { mutableStateOf("") }
     var fecha by remember { mutableStateOf(LocalDate.now()) }
     var error by remember { mutableStateOf<String?>(null) }
+        val errorMsg = stringResource(R.string.error_value)
 
     Scaffold(topBar = { TopAppBar(title = { Text(stringResource(id = R.string.title_form)) }) }) { inner ->
         Column(
@@ -99,7 +100,7 @@ fun FormularioScreen(
                 onClick = {
                     val valor = valorTexto.toDoubleOrNull()
                     if (valor == null || valor <= 0.0) {
-                        error = stringResource(R.string.error_value)
+                        error = errorMsg
                         return@Button
                     }
                     error = null
