@@ -27,7 +27,6 @@ jobs:
           yes | sdkmanager --licenses
           sdkmanager "platform-tools" "platforms;android-34" "build-tools;34.0.0"
 
-      # Workaround: disable Gradle caching to avoid cache service outages causing failures
       - name: Setup Gradle (no cache)
         uses: gradle/actions/setup-gradle@v3
         with:
