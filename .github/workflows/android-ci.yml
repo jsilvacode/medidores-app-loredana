@@ -1,4 +1,4 @@
-ame: Android CI (assembleDebug - no wrapper)
+name: Android CI (assembleDebug - no cache)
 
 on:
   push:
@@ -27,9 +27,11 @@ jobs:
           yes | sdkmanager --licenses
           sdkmanager "platform-tools" "platforms;android-34" "build-tools;34.0.0"
 
-      - name: Setup Gradle
+      # Workaround: disable Gradle caching to avoid cache service outages causing failures
+      - name: Setup Gradle (no cache)
         uses: gradle/actions/setup-gradle@v3
         with:
+          cache-disabled: true
           gradle-version: '8.7'
 
       - name: Build Debug APK (no wrapper)
@@ -40,4 +42,3 @@ jobs:
         with:
           name: app-debug-apk
           path: app/build/outputs/apk/debug/*.apk
-          
