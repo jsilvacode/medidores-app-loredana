@@ -1,4 +1,4 @@
-ame: Android CI (assembleDebug - no wrapper)
+name: Android CI (assembleDebug - no cache)
 
 on:
   push:
@@ -42,4 +42,3 @@ jobs:
         with:
           name: app-debug-apk
           path: app/build/outputs/apk/debug/*.apk
-          
