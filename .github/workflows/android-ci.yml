@@ -1,4 +1,4 @@
-ame: Android CI (assembleDebug - no wrapper)
+name: Android CI (assembleDebug - no wrapper)
 
 on:
   push:
