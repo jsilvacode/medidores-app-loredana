@@ -1,11 +1,30 @@
 package com.loredana.medidores.ui.form
 
-import androidx.compose.foundation.layout.*
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
+import androidx.compose.material3.DatePicker
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FilterChip
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
+import androidx.compose.material3.rememberDatePickerState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.KeyboardOptions
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
@@ -39,19 +58,19 @@ fun FormularioScreen(
                     selected = tipo == TipoMedidor.AGUA,
                     onClick = { tipo = TipoMedidor.AGUA },
                     label = { Text(stringResource(R.string.type_agua)) },
-                    leadingIcon = { Icon(painterResource(R.drawable.ic_agua), null) }
+                    leadingIcon = { androidx.compose.material3.Icon(painterResource(R.drawable.ic_agua), null) }
                 )
                 FilterChip(
                     selected = tipo == TipoMedidor.LUZ,
                     onClick = { tipo = TipoMedidor.LUZ },
                     label = { Text(stringResource(R.string.type_luz)) },
-                    leadingIcon = { Icon(painterResource(R.drawable.ic_luz), null) }
+                    leadingIcon = { androidx.compose.material3.Icon(painterResource(R.drawable.ic_luz), null) }
                 )
                 FilterChip(
                     selected = tipo == TipoMedidor.GAS,
                     onClick = { tipo = TipoMedidor.GAS },
                     label = { Text(stringResource(R.string.type_gas)) },
-                    leadingIcon = { Icon(painterResource(R.drawable.ic_gas), null) }
+                    leadingIcon = { androidx.compose.material3.Icon(painterResource(R.drawable.ic_gas), null) }
                 )
             }
 
@@ -59,7 +78,7 @@ fun FormularioScreen(
                 value = valorTexto,
                 onValueChange = { valorTexto = it },
                 label = { Text(stringResource(R.string.label_value)) },
-                keyboardOptions = androidx.compose.ui.text.input.KeyboardOptions(keyboardType = KeyboardType.Number),
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 singleLine = true,
                 modifier = Modifier.fillMaxWidth()
             )
