@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Medidores Hogar</string>
+    <string name="title_list">Lecturas de Medidores</string>
+    <string name="title_form">Nueva Lectura</string>
+    <string name="type_agua">Agua</string>
+    <string name="type_luz">Luz</string>
+    <string name="type_gas">Gas</string>
+    <string name="label_type">Tipo de gasto</string>
+    <string name="label_value">Valor del medidor</string>
+    <string name="label_date">Fecha</string>
+    <string name="label_value_date">%1$.2f • %2$s</string>
+    <string name="action_save">Guardar</string>
+    <string name="action_delete">Eliminar</string>
+    <string name="empty_list">No hay lecturas registradas. Toca + para agregar.</string>
+    <string name="error_value">Ingresa un valor numérico mayor a 0</string>
+</resources>
